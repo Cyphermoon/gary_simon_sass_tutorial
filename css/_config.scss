@@ -1,4 +1,6 @@
-$breakpoint:  768px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700&display=swap');
+
+$breakpoint:  800px;
 
 $color : (
     primary : #2072ff,
@@ -14,6 +16,8 @@ $color : (
 
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html{
@@ -21,13 +25,14 @@ html{
 }
 
 body{
-    margin: 0;
-    padding: 0;
     line-height: 1.5;
     color: color("text_black");
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
+@mixin subtleBoxShadow {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
 
 @mixin medium_breakpoint {
     @media screen and (min-width:#{$breakpoint}) {
@@ -48,21 +53,24 @@ body{
 }
 
 .container{
-    width: 85%;
-    max-width: 40rem;
+    width: min(80%, 98%);
     margin: 0 auto;
 }
 
 .spacing_big > * + *{
-    margin-top: 1.5rem;
+    margin-top: 8vh;
+
+    @include medium_breakpoint(){
+        margin-top: calc(20vh);
+    }
 }
 
 .spacing_medium > * + *{
-    margin-top: .75rem;
+    margin-top: 1.25rem;
 }
 
 .spacing_small > * + *{
-    margin-top: .3rem;
+    margin-top: .625rem;
 }
 
 a{

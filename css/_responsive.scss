@@ -1,0 +1,6 @@
+@include medium_breakpoint{
+    header{
+        clip-path: polygon(100% 0, 100% 31%, 35% 100%, 0 100%, 0 0);
+        background-color: red;
+    }
+}

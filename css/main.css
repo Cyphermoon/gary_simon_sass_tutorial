@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -8,35 +11,38 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
   line-height: 1.5;
   color: #222222;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   html {
     font-size: 19px;
   }
 }
 
 .container {
-  width: 85%;
-  max-width: 40rem;
+  width: 80%;
   margin: 0 auto;
 }
 
 .spacing_big > * + * {
-  margin-top: 1.5rem;
+  margin-top: 8vh;
+}
+
+@media screen and (min-width: 800px) {
+  .spacing_big > * + * {
+    margin-top: calc(20vh);
+  }
 }
 
 .spacing_medium > * + * {
-  margin-top: .75rem;
+  margin-top: 1.25rem;
 }
 
 .spacing_small > * + * {
-  margin-top: .3rem;
+  margin-top: .625rem;
 }
 
 a {
@@ -50,10 +56,39 @@ p {
 }
 
 header {
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
+  padding: 1rem 0;
+}
+
+header .overlap {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: #2072ff;
-  padding-top: 1rem;
+  -webkit-clip-path: polygon(100% 0, 100% 76%, 68% 100%, 0 100%, 0 0);
+          clip-path: polygon(100% 0, 100% 76%, 68% 100%, 0 100%, 0 0);
+}
+
+@media screen and (min-width: 800px) {
+  header .overlap {
+    -webkit-clip-path: polygon(50% 0%, 88% 0, 46% 100%, 0 100%, 0 0);
+            clip-path: polygon(50% 0%, 88% 0, 46% 100%, 0 100%, 0 0);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  header .header_grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 1fr;
+        grid-template-columns: 50% 1fr;
+    gap: 1.75em;
+        grid-template-areas: "primary card";
+  }
 }
 
 header nav a {
@@ -64,7 +99,15 @@ header nav a {
 header .visual_direction {
   background-color: white;
   border-radius: .9em;
-  padding: .5em .9em;
+  padding: 1em 1.5em;
+  -webkit-box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 800px) {
+  header .visual_direction {
+    grid-area: card;
+  }
 }
 
 header .visual_direction ul {
@@ -104,20 +147,36 @@ header .value_proposition {
   text-align: center;
 }
 
+@media screen and (min-width: 800px) {
+  header .value_proposition {
+    text-align: left;
+    grid-area: primary;
+    margin-top: 0;
+  }
+}
+
 header .value_proposition h1 {
-  font-size: 3.5rem;
-  line-height: 1em;
+  font-size: 2rem;
+  line-height: 1.25em;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 header .value_proposition p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 header .value_proposition a {
   color: #222222;
   background-color: #fff;
+  font-weight: bolder;
+  -webkit-box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   padding: .5em .95em;
+  width: 75%;
   border-radius: .5em;
-  font-size: .85rem;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
