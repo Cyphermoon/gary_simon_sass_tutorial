@@ -1,0 +1,65 @@
+@import "./config";
+
+header{
+    width: 100vw;
+    height: 100vh;
+    background-color: color("primary");
+    padding-top:min(1rem, 3rem);
+
+    nav a{
+        color: color("text_white");
+        font-size: 1.5rem;
+    }
+
+    .visual_direction{
+        background-color: white;
+        border-radius: .9em;
+        padding: .5em .9em;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li{
+                @include flexCenter;
+                font-size: 1rem;
+               
+                p{
+                    font-size: inherit;
+                }
+    
+                span{
+                    display: inline-block;
+                    margin-right: .75em;
+                    width: 26px;
+                    height: 26px;
+                    border-radius: 50%;
+                    background-color: color("text_light")
+                }
+            }
+        }
+    }
+
+    .value_proposition{
+        color: color("text_white");
+        text-align: center;
+
+        h1{
+            font-size: 3.5rem;
+            line-height: 1em;
+        }
+
+        p{
+            font-size: 1.1rem;
+        }
+
+        a{
+            color: color("text_black");
+            background-color: color("text_white");
+            padding: .5em .95em;
+            border-radius: .5em;
+            font-size: .85rem;
+        }
+    }
+}

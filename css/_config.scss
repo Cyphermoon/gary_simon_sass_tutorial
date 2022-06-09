@@ -1,0 +1,76 @@
+$breakpoint:  768px;
+
+$color : (
+    primary : #2072ff,
+    text_black : #222222,
+    text_light : lighten(#222222,75%),
+    text_white : #fff,
+);
+
+
+@function color($value){
+    @return map-get($color, $value)
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 15px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    color: color("text_black");
+    font-family: sans-serif;
+}
+
+
+@mixin medium_breakpoint {
+    @media screen and (min-width:#{$breakpoint}) {
+        @content;
+    }
+}
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+@include medium_breakpoint{
+    html{
+        font-size: 19px;
+    }
+}
+
+.container{
+    width: 85%;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+.spacing_big > * + *{
+    margin-top: 1.5rem;
+}
+
+.spacing_medium > * + *{
+    margin-top: .75rem;
+}
+
+.spacing_small > * + *{
+    margin-top: .3rem;
+}
+
+a{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+p{
+    font-size: 1.1rem;
+}
